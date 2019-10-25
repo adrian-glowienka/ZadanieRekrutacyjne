@@ -10,25 +10,19 @@
   </head>
 
   <body>
-    <h1>TVmaze</h1>
-     <input type=text placeholder="Search">
-     <button id="btn-1">Search</button>
-    <ul id="list-program">
-  
+    <div class="col-sm-10 main-content">
+      <div class="search">
+        <input class="inputField inputSearchField" type="text" placeholder="Search...">
+      </div>
+      <div class="container">
+    
+        <div id="app" class="row">
+    
+        </div>
+      </div>
+    
+    </div>
     </ul>
     <script src="/js/data.js"></script>
-     <script>
-
-        document.getElementById('btn-1').addEventListener('click', getText);
-        function getText(){
-
-        fetch('https://api.tvmaze.com/shows')
-        .then((res) => res.json())
-        .then((data)=> {
-            document.getElementById('list-program').innerHTML = data;
-        })
-    }
-
-    </script>
   </body>
 </html>
