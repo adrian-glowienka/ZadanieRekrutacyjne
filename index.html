@@ -10,19 +10,96 @@
   </head>
 
   <body>
-    <div class="col-sm-10 main-content">
-      <div class="search">
-        <input class="inputField inputSearchField" type="text" placeholder="Search...">
-      </div>
-      <div class="container">
-    
-        <div id="app" class="row">
-    
-        </div>
-      </div>
-    
-    </div>
+    <h1>TVmaze</h1>
+     <input type=text placeholder="Search" id="search">
+     <button id="btn-1">Search</button>
+    <ul id="list-program">
+  
     </ul>
     <script src="/js/data.js"></script>
+     <script>
+       
+        const searchInput = document.getElementById('btn-1');
+        searchInput.addEventListener('click', getText);
+        function getText(){
+          console.log(searchInput.value)
+
+        fetch('https://api.tvmaze.com/shows/3')
+        .then((res) => res.json())
+        .then((data)=> {
+            document.getElementById('list-program').innerHTML = data.name;
+
+
+        })
+    }
+
+
+
+//     const createList = data => {
+//      data.results.map(show =>{
+//          const listItem = document.createElement("li");
+//          listItem.innerText = show.name;
+//          listItem.addEventListener("click", function(event){
+//              const detailsUrl = show.url;
+//              requestData(detailsUrl, showDetails);
+//          });
+//          return listItem;
+//      })
+//      .forEach(item =>list.appendChild(item));
+     
+//  }
+
+//  requestData("https://api.tvmaze.com/shows", createList)
+
+    // const details = document.querySelector("#btn-1");
+    //   const list = document.querySelector("#list-program");
+    //   const showDetails = data => {
+    //     details.textContent = data.name + ": " + data.status;
+    //   };
+    //   const createList = data => {
+    //     data.results
+    //       .map(pokemon => {
+    //         const listItem = document.createElement("li");
+    //         const decorator = document.createElement("strong");
+    //         decorator.innerText = " POKEMON";
+    //         listItem.innerText = pokemon.name;
+    //         listItem.appendChild(decorator);
+    //         listItem.addEventListener("click", function(event) {
+    //           // console.log(this);
+    //           // console.log(event.target);
+    //           // console.log(event.currentTarget);
+    //           const detailsUrl = pokemon.url;
+    //           requestData(detailsUrl, showDetails);
+    //         });
+    //         return listItem;
+    //       })
+    //       .forEach(item => list.appendChild(item));
+    //       console.log(item)
+    //   };
+    //   requestData("https://api.tvmaze.com/shows", createList);
+
+    </script>
+
+    <!-- <input type="text" onkeyup="changeInput(this.value)">
+    <div id="result"></div>
+
+    <script>
+    
+    var people = "https://api.tvmaze.com/shows"
+
+function matchPeople(input) {
+  var reg = new RegExp(input.split('').join('\\w*').replace(/\W/, ""), 'i');
+  return people.filter(function(person) {
+    if (person.match(reg)) {
+      return person;
+    }
+  });
+}
+
+function changeInput(val) {
+  var autoCompleteResult = matchPeople(val);
+  document.getElementById("result").innerHTML = autoCompleteResult;
+}
+    </script> -->
   </body>
 </html>
