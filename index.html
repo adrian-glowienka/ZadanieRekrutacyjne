@@ -10,31 +10,34 @@
     <h1>TV Maze</h1>
     <div id="show-details"></div>
     <ul id="shows"></ul>
-    <script src="helpers.js"></script>
+    <div id="app"></div>
+    <script src="/js/helpers.js"></script>
     <script>
+      
       const details = document.querySelector("#show-details");
       const list = document.querySelector("#shows");
 
       const showDetails = data => {
-        details.textContent = data.name + ": " + data.avarege;
+        details.textContent = data.id + ": " + data.avarege;
       };
       const createList = data => {
-        data.name
-          .map(show => {
+        data.map(show => {
             const listItem = document.createElement("li");
             listItem.innerText = show.name;
-            listItem.addEventListener("click", function(event) {
-              // console.log(this);
-              // console.log(event.target);
-              // console.log(event.currentTarget);
+            // listItem.addEventListener("click", function(event) {
 
-              const detailsUrl = show.url;
-              requestData(detailsUrl, showDetails);
-            });
+            // const detailsUrl = show.url;
+            // requestData(detailsUrl, showDetails);
+            // });
             return listItem;
-          })
+          }).slice(0,12)
           .forEach(item => list.appendChild(item));
       };
+
+
+      
+  
+      console.log(showDetails)
 
       requestData("https://api.tvmaze.com/shows", createList);
     </script>
