@@ -1,60 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>TV App</title>
-    <link rel="stylesheet" href="/css/main.css">
-    <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <header>
-      <div id="top__header">
-          <div id="logo">
-              <img src="/photos/tvm-header-logo.png">
-          </div>
-          <div id="search">
-            <form id="form">
-              <div class="row__colapse">
-                <div class="box__search">
-                  <input type="text" placeholder="Search movie" id="input"><button id="search__button">Search</button>
-                </div>
-              </div>
-            </form>
-          </div>    
-          <div id="registry">
-            <a href="" id="login">Login</a>
-            <a href="" id="password">Password</a>
-          </div>     
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>TV App</title>
+  <link rel="stylesheet" href="./css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <div id="top__header">
+      <div id="logo">
+        <img src="/photos/tvm-header-logo.png">
       </div>
-      <nav id="nav">
-        <div id="box__nav">
-              <ul id="list__navigation">
-                <li>Shows</li>
-                <li>People</li>
-                <li>Networks</li>
-                <li>Web Channels</li>
-                <li>Articles</li>
-                <li>Schedule</li>
-                <li>Calendar</li>
-                <li>Countdown</li>
-                <li>Forums</li>
-              </ul>
-        </div>   
-      </nav>
+      <div id="search">
+        <form id="form">
+          <div class="row__colapse">
+            <div class="box__search">
+              <input type="text" placeholder="Search movie" id="input"><button id="search__button">Search</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div id="registry">
+        <a href="" id="login">Login</a>
+        <a href="" id="password">Password</a>
+      </div>
+    </div>
+    <nav id="nav">
+      <div id="box__nav">
+        <ul id="list__navigation">
+          <li>Shows</li>
+          <li>People</li>
+          <li>Networks</li>
+          <li>Web Channels</li>
+          <li>Articles</li>
+          <li>Schedule</li>
+          <li>Calendar</li>
+          <li>Countdown</li>
+          <li>Forums</li>
+        </ul>
+      </div>
+    </nav>
   </header>
   <h1 id="tv">Search result :</h1>
-    <div id="show-list"></div>
-    <ul id="shows"></ul>
-    <div id="img"></div>
-    <div id="details__show">
-      <p id="name">Name:</p>
-      <p id="score">Score:</p>
-      <p id="relase-date">Relase date:</p>
-      <p id="runtime">Runtime:</p>
-      <p id="description">Description:</p>
-    </div>
-    <script src="/js/data.js"></script>
-  </body>
+  <div id="show-list"></div>
+  <ul id="shows"></ul>
+  <div id="img"></div>
+  <div id="details__show">
+    <p id="name">Name:</p>
+    <p id="score">Score:</p>
+    <p id="relase-date">Relase date:</p>
+    <p id="runtime">Runtime:</p>
+    <p id="description">Description:</p>
+  </div>
+  <script src="./js/data.js"></script>
+</body>
+
 </html>
